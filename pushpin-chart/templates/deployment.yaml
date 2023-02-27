@@ -37,8 +37,6 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-            - containerPort: 5561
-              name: http-mc
             
           livenessProbe:
             httpGet:

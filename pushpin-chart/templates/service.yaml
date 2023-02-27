@@ -11,9 +11,5 @@ spec:
       targetPort: http
       protocol: TCP
       name: http 
-    - port: 5561
-      targetPort: http-mc
-      protocol: TCP
-      name: http-mc
   selector:
     {{- include "pushpin-chart.selectorLabels" . | nindent 4 }}
