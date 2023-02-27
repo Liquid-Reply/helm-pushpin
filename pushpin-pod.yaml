@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pushpin-test
+  name: pushpin-test
+  namespace: pushpin-test
+spec:
+  containers:
+    - image: fanout/pushpin:local
+      imagePullPolicy: Never
+      name: pushpin
+      ports:
+        - containerPort: 7999
+        - containerPort: 5560
+        - containerPort: 5561
+        - containerPort: 5562
+        - containerPort: 5563
+      resources:
+        limits:
+          cpu: 500m
+          memory: 256Mi
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
